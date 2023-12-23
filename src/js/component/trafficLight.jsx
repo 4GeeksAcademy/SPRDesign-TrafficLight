@@ -9,16 +9,16 @@ const TrafficLight = () => { //  declarar función
         green: 'bg-success'
     });
 
-    const [randomIntervalId, setRandomIntervalId] = useState(null); // Nuevo estado para almacenar el ID del intervalo
+    const [randomIntervalId, setRandomIntervalId] = useState(null); // Nuevo state para el ID del intervalo
     
     const startRandomLights = () => {
         const intervalId = setInterval(randomLight, 500);
-        setRandomIntervalId(intervalId); // Almacenar el ID del intervalo en el estado
+        setRandomIntervalId(intervalId); // Almacenar el ID del intervalo
     };
 
     const stopRandomLights = () => {
         if (randomIntervalId) {
-            clearInterval(randomIntervalId); // Detener el intervalo si existe
+            clearInterval(randomIntervalId); // Detener el intervalo 
             setRandomIntervalId(null); // Limpiar el ID del intervalo al detenerlo
         }
     };  
@@ -65,14 +65,12 @@ const TrafficLight = () => { //  declarar función
             case 'green':
                 handleGreenClick();
                 break;
-            default:
-                break;
         }
     };
 
 // Botón Purple
     const changeToLila = () => {
-        stopRandomLights(); // Detener la animación aleatoria antes de cambiar a lila
+        stopRandomLights(); // Detener random antes de cambiar a lila
         setCircleColor({
             red: 'lila light-lila',
             yellow: 'lila light-lila',
@@ -124,7 +122,6 @@ const TrafficLight = () => { //  declarar función
                     <PurpleButton onClick={changeToLila} />
                 </div>
             </div>
-
         </div>
     );
 };
